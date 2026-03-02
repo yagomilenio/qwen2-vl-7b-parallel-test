@@ -1,0 +1,13 @@
+# ─────────────────────────────────────────────────────────────────
+#  model_config.toml — Config interna de run_vision.py
+#  El servidor de paralelización NO lee este fichero.
+# ─────────────────────────────────────────────────────────────────
+
+[model]
+id             = "Qwen2-VL-7B-Instruct-GGUF@Q4_K_M"
+temperature    = 0.7
+max_tokens     = 1024
+context_length = 4096
+timeout_sec    = 180
+max_retries    = 3
+retry_delay    = 5.0

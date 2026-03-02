@@ -1,0 +1,220 @@
+#!/usr/bin/env python3
+"""
+run_vision.py — Procesa un rango de imágenes con Qwen2-VL via lms CLI.
+
+El servidor de paralelización llama a este script así:
+    python run_vision.py --start 0 --end 9 --pack general --output outputs/results_0_9.json
+
+El script NO lee config.toml. Recibe todo lo que necesita por argumentos.
+"""
+
+import argparse
+import json
+import logging
+import subprocess
+import sys
+import time
+import tomllib
+from dataclasses import dataclass
+from datetime import datetime
+from pathlib import Path
+
+
+# ══════════════════════════════════════════════════════════════════
+#  CONFIG INTERNA DEL MODELO
+# ══════════════════════════════════════════════════════════════════
+
+@dataclass
+class ModelConfig:
+    id:             str   = "Qwen2-VL-7B-Instruct-GGUF@Q4_K_M"
+    temperature:    float = 0.7
+    max_tokens:     int   = 1024
+    context_length: int   = 4096
+    timeout_sec:    int   = 180
+    max_retries:    int   = 3
+    retry_delay:    float = 5.0
+
+
+def load_model_config(path: str = "model_config.toml") -> ModelConfig:
+    p = Path(path)
+    if not p.exists():
+        return ModelConfig()
+    with open(p, "rb") as f:
+        raw = tomllib.load(f)
+    return ModelConfig(**raw.get("model", {}))
+
+
+# ══════════════════════════════════════════════════════════════════
+#  LOGGING
+# ══════════════════════════════════════════════════════════════════
+
+def setup_logging(output_path: Path) -> None:
+    log_path = output_path.with_suffix(".log")
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s [%(levelname)s] %(message)s",
+        handlers=[
+            logging.StreamHandler(sys.stdout),
+            logging.FileHandler(log_path, encoding="utf-8"),
+        ]
+    )
+
+
+# ══════════════════════════════════════════════════════════════════
+#  PROMPT PACK
+# ══════════════════════════════════════════════════════════════════
+
+def load_prompt_pack(pack_name: str) -> list[dict]:
+    pack_file = Path("prompts") / f"{pack_name}.json"
+    if not pack_file.exists():
+        available = [p.stem for p in Path("prompts").glob("*.json")]
+        print(f"ERROR: Pack '{pack_name}' no encontrado. Disponibles: {available}", file=sys.stderr)
+        sys.exit(1)
+    with open(pack_file, encoding="utf-8") as f:
+        return json.load(f)["prompts"]
+
+
+# ══════════════════════════════════════════════════════════════════
+#  LLAMADA AL MODELO
+# ══════════════════════════════════════════════════════════════════
+
+def run_prompt(image_path: Path, prompt_text: str, model: ModelConfig) -> dict:
+    cmd = [
+        "lms", "chat", model.id,
+        "-m", prompt_text,
+        "--image", str(image_path),
+    ]
+
+    for attempt in range(1, model.max_retries + 1):
+        try:
+            t0 = time.time()
+            result = subprocess.run(cmd, capture_output=True, text=True, timeout=model.timeout_sec)
+            elapsed = round(time.time() - t0, 2)
+
+            if result.returncode == 0:
+                return {"success": True, "response": result.stdout.strip(),
+                        "elapsed_sec": elapsed, "attempt": attempt, "error": None}
+
+            logging.warning(f"    lms rc={result.returncode} (intento {attempt}): {result.stderr.strip()[:200]}")
+
+        except subprocess.TimeoutExpired:
+            logging.warning(f"    Timeout {model.timeout_sec}s (intento {attempt})")
+        except FileNotFoundError:
+            logging.error("'lms' no encontrado. ¿Está instalado LM Studio CLI?")
+            sys.exit(1)
+
+        if attempt < model.max_retries:
+            time.sleep(model.retry_delay)
+
+    return {"success": False, "response": None, "elapsed_sec": 0,
+            "attempt": model.max_retries, "error": f"Falló tras {model.max_retries} intentos"}
+
+
+# ══════════════════════════════════════════════════════════════════
+#  PROCESAMIENTO
+# ══════════════════════════════════════════════════════════════════
+
+def process(start: int, end: int, images_dir: Path, pack_name: str,
+            output_path: Path, model: ModelConfig) -> None:
+
+    # Resolver imágenes del rango
+    extensions = {".jpg", ".jpeg", ".png", ".webp", ".bmp"}
+    all_images = sorted(
+        [f for f in images_dir.iterdir() if f.suffix.lower() in extensions],
+        key=lambda p: p.name
+    )
+    total = len(all_images)
+
+    if start < 0 or end >= total or start > end:
+        logging.error(f"Rango [{start}..{end}] inválido. Imágenes disponibles: 0–{total - 1} ({total} total)")
+        sys.exit(1)
+
+    images  = all_images[start:end + 1]
+    prompts = load_prompt_pack(pack_name)
+
+    logging.info("=" * 60)
+    logging.info(f"  Modelo   : {model.id}")
+    logging.info(f"  Pack     : {pack_name}  ({len(prompts)} prompts)")
+    logging.info(f"  Rango    : [{start}..{end}]  →  {len(images)} imágenes")
+    logging.info(f"  Output   : {output_path}")
+    logging.info(f"  Ops total: {len(images) * len(prompts)}")
+    logging.info("=" * 60)
+
+    results    = {}
+    started_at = datetime.now().isoformat()
+
+    for offset, image_path in enumerate(images):
+        global_idx = start + offset
+        logging.info(f"\n[{offset + 1}/{len(images)}] {image_path.name}")
+
+        item_results = {}
+        for p in prompts:
+            pid, label, text = p["id"], p["label"], p["prompt"]
+            logging.info(f"  → [{pid}] {label}")
+            result = run_prompt(image_path, text, model)
+            status = "✓" if result["success"] else "✗"
+            logging.info(f"    {status} {result['elapsed_sec']}s")
+            item_results[pid] = {"label": label, "prompt": text,
+                                 "timestamp": datetime.now().isoformat(), **result}
+
+        results[str(global_idx)] = {
+            "index":      global_idx,
+            "filename":   image_path.name,
+            "path":       str(image_path),
+            "size_bytes": image_path.stat().st_size,
+            "prompts":    item_results,
+        }
+
+    n_ok  = sum(1 for it in results.values() for r in it["prompts"].values() if r["success"])
+    n_err = sum(1 for it in results.values() for r in it["prompts"].values() if not r["success"])
+
+    output = {
+        "_meta": {
+            "model":            model.id,
+            "pack":             pack_name,
+            "start":            start,
+            "end":              end,
+            "total_items":      len(images),
+            "prompts_per_item": len(prompts),
+            "total_ops":        len(images) * len(prompts),
+            "successes":        n_ok,
+            "failures":         n_err,
+            "started_at":       started_at,
+            "finished_at":      datetime.now().isoformat(),
+        },
+        "results": results,
+    }
+
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, ensure_ascii=False, indent=2)
+
+    logging.info(f"\n✅ {output_path}  ({n_ok}/{len(images) * len(prompts)} ok)")
+
+
+# ══════════════════════════════════════════════════════════════════
+#  CLI
+# ══════════════════════════════════════════════════════════════════
+
+def main() -> None:
+    parser = argparse.ArgumentParser(
+        description="Qwen2-VL vision runner — procesa un rango de imágenes"
+    )
+    parser.add_argument("--start",      type=int,   required=True, help="Índice inicial (inclusivo)")
+    parser.add_argument("--end",        type=int,   required=True, help="Índice final (inclusivo)")
+    parser.add_argument("--pack",       type=str,   default="general", help="Pack de prompts a usar")
+    parser.add_argument("--input-dir",  type=str,   default="inputs/images", help="Directorio de imágenes")
+    parser.add_argument("--output",     type=str,   required=True, help="Ruta del fichero de output JSON")
+    parser.add_argument("--model-config", type=str, default="model_config.toml", help="Config interna del modelo")
+    args = parser.parse_args()
+
+    output_path = Path(args.output)
+    setup_logging(output_path)
+
+    model = load_model_config(args.model_config)
+    process(args.start, args.end, Path(args.input_dir), args.pack, output_path, model)
+
+
+if __name__ == "__main__":
+    main()

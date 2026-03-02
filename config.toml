@@ -1,0 +1,24 @@
+# ─────────────────────────────────────────────────────────────────
+#  config.toml — Leído ÚNICAMENTE por el servidor de paralelización
+#  El script run_vision.py NO lee este fichero en absoluto.
+# ─────────────────────────────────────────────────────────────────
+
+[inputs]
+type = "directory"
+
+[inputs.directory]
+path       = "inputs/images"
+recursive  = false
+extensions = [".jpg", ".jpeg", ".png", ".webp", ".bmp"]
+sort_order = "filename"
+
+[runner]
+command   = "python run_vision.py"
+arg_start = "--start"
+arg_end   = "--end"
+extra_args = "--pack general"
+workdir   = "."
+
+[outputs]
+dir              = "outputs"
+filename_pattern = "results_{start}_{end}.json"
