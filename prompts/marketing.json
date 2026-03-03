@@ -1,0 +1,29 @@
+{
+  "prompts": [
+    {
+      "id": "M01",
+      "label": "Caption para Instagram",
+      "prompt": "Escribe un caption atractivo para Instagram basado en esta imagen. Incluye emojis relevantes, un gancho inicial, el mensaje principal y entre 10 y 15 hashtags populares en español. Tono: cercano y dinámico."
+    },
+    {
+      "id": "M02",
+      "label": "Post para LinkedIn",
+      "prompt": "Redacta un post profesional para LinkedIn inspirado en esta imagen. Tono serio y reflexivo, orientado a profesionales. Entre 100 y 150 palabras. Sin hashtags excesivos (máximo 3-5)."
+    },
+    {
+      "id": "M03",
+      "label": "Tweet / X",
+      "prompt": "Escribe un tweet (máximo 280 caracteres) impactante basado en el contenido de esta imagen. Debe generar engagement. Incluye 2-3 hashtags relevantes."
+    },
+    {
+      "id": "M04",
+      "label": "Título y descripción para anuncio",
+      "prompt": "Crea un título (máximo 30 caracteres) y una descripción (máximo 90 caracteres) para un anuncio de Google Ads o Meta Ads basado en esta imagen. Enfócate en el beneficio principal para el usuario."
+    },
+    {
+      "id": "M05",
+      "label": "Análisis de engagement potencial",
+      "prompt": "Analiza el potencial de engagement de esta imagen en redes sociales. ¿Qué elementos la hacen atractiva o poco atractiva? ¿A qué audiencia objetivo apela? ¿Qué plataforma le iría mejor? Justifica."
+    }
+  ]
+}

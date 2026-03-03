@@ -1,0 +1,34 @@
+{
+  "prompts": [
+    {
+      "id": "D01",
+      "label": "Tipo de documento",
+      "prompt": "¿Qué tipo de documento es este? (factura, contrato, formulario, carta, informe, etc.). Justifica tu respuesta con los elementos visuales que lo indican."
+    },
+    {
+      "id": "D02",
+      "label": "Extracción de texto completo",
+      "prompt": "Transcribe todo el texto visible en este documento, respetando la estructura y el orden de lectura natural (de arriba a abajo, de izquierda a derecha)."
+    },
+    {
+      "id": "D03",
+      "label": "Datos clave",
+      "prompt": "Extrae los datos clave de este documento: fechas, nombres, números de referencia, importes, direcciones u otros datos estructurados relevantes. Preséntalo en formato clave: valor."
+    },
+    {
+      "id": "D04",
+      "label": "Estructura del documento",
+      "prompt": "Describe la estructura y el layout de este documento. ¿Tiene cabecera, secciones, tablas, firmas, logotipos? ¿Cómo están organizados visualmente?"
+    },
+    {
+      "id": "D05",
+      "label": "Calidad y legibilidad",
+      "prompt": "Evalúa la calidad y legibilidad de este documento. ¿Hay zonas borrosas, mal iluminadas, recortadas o con texto ilegible? Indica qué partes son difíciles de leer y por qué."
+    },
+    {
+      "id": "D06",
+      "label": "Idioma y formalidad",
+      "prompt": "¿En qué idioma está redactado el documento? ¿Qué nivel de formalidad tiene el lenguaje utilizado? ¿Es un documento oficial, profesional o informal?"
+    }
+  ]
+}

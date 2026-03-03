@@ -1,0 +1,34 @@
+{
+  "prompts": [
+    {
+      "id": "E01",
+      "label": "Tipo de escena",
+      "prompt": "Clasifica la escena de la imagen: ¿es interior o exterior? ¿Urbana, natural, industrial, doméstica? ¿De día o de noche? Justifica con los elementos visuales presentes."
+    },
+    {
+      "id": "E02",
+      "label": "Descripción del entorno",
+      "prompt": "Describe el entorno o escenario de la imagen con detalle. Menciona la arquitectura o paisaje, los elementos de fondo, la iluminación y la atmósfera general."
+    },
+    {
+      "id": "E03",
+      "label": "Condiciones de luz",
+      "prompt": "Analiza las condiciones de iluminación de la imagen: ¿es luz natural o artificial? ¿La fuente de luz está a la izquierda, derecha, arriba? ¿Hay sombras fuertes o luz difusa? ¿Qué hora del día aparenta ser?"
+    },
+    {
+      "id": "E04",
+      "label": "Clima y condiciones ambientales",
+      "prompt": "Si la imagen es en exterior, describe las condiciones climáticas visibles: cielo despejado, nublado, lluvia, nieve, niebla, viento, etc. Si es en interior, este campo no aplica."
+    },
+    {
+      "id": "E05",
+      "label": "Geolocalización estimada",
+      "prompt": "A partir de los elementos visuales (arquitectura, vegetación, señales, idioma del texto, estilo urbano), ¿puedes estimar en qué región geográfica o país podría estar tomada esta imagen? Indica tu nivel de confianza."
+    },
+    {
+      "id": "E06",
+      "label": "Época o periodo temporal",
+      "prompt": "¿En qué época o periodo temporal fue tomada o ambientada esta imagen? Fíjate en la tecnología visible, los vehículos, la ropa, la arquitectura y el estilo fotográfico. Estima la década aproximada."
+    }
+  ]
+}

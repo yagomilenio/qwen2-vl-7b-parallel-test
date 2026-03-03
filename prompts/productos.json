@@ -1,0 +1,34 @@
+{
+  "prompts": [
+    {
+      "id": "P01",
+      "label": "Identificación del producto",
+      "prompt": "Identifica el producto que aparece en la imagen. Indica su categoría, tipo y, si es posible, marca o modelo. ¿Es un producto nuevo o usado?"
+    },
+    {
+      "id": "P02",
+      "label": "Descripción para e-commerce",
+      "prompt": "Escribe una descripción de producto para una tienda online a partir de esta imagen. Incluye características visuales, materiales aparentes, colores disponibles y puntos de venta clave. Máximo 150 palabras."
+    },
+    {
+      "id": "P03",
+      "label": "Estado y defectos",
+      "prompt": "Analiza el estado del producto. ¿Tiene daños visibles, arañazos, manchas, deformaciones o signos de desgaste? Si el producto parece en perfecto estado, indícalo también."
+    },
+    {
+      "id": "P04",
+      "label": "Atributos visuales",
+      "prompt": "Lista los atributos visuales del producto: color exacto, acabado (mate/brillo/satinado), textura aparente, forma, tamaño relativo estimado y cualquier elemento decorativo o funcional visible."
+    },
+    {
+      "id": "P05",
+      "label": "Etiquetas y texto en producto",
+      "prompt": "¿El producto tiene etiquetas, marcas, logotipos, códigos de barras o texto impreso? Transcribe todo el texto visible en el producto o su packaging."
+    },
+    {
+      "id": "P06",
+      "label": "Categoría y tags SEO",
+      "prompt": "Sugiere una categoría principal y 8-10 etiquetas (tags) SEO en español para indexar este producto en una tienda online. Responde en formato JSON con los campos 'categoria' y 'tags'."
+    }
+  ]
+}

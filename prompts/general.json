@@ -1,0 +1,29 @@
+{
+  "prompts": [
+    {
+      "id": "G01",
+      "label": "Descripción general",
+      "prompt": "Describe detalladamente lo que ves en esta imagen. Incluye los elementos principales, el contexto y cualquier detalle relevante."
+    },
+    {
+      "id": "G02",
+      "label": "Objetos presentes",
+      "prompt": "Lista todos los objetos que puedes identificar en la imagen. Para cada uno indica su posición aproximada (izquierda, centro, derecha, fondo, primer plano)."
+    },
+    {
+      "id": "G03",
+      "label": "Colores dominantes",
+      "prompt": "¿Cuáles son los colores dominantes en esta imagen? Describe la paleta de colores y cómo contribuyen al tono general de la imagen."
+    },
+    {
+      "id": "G04",
+      "label": "Texto visible",
+      "prompt": "¿Hay algún texto visible en la imagen? Si es así, transcríbelo exactamente tal como aparece. Si no hay texto, responde 'Sin texto visible'."
+    },
+    {
+      "id": "G05",
+      "label": "Resumen en una frase",
+      "prompt": "Resume el contenido de esta imagen en una única frase concisa de no más de 20 palabras."
+    }
+  ]
+}

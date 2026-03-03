@@ -9,6 +9,18 @@ START  ?= 0
 END    ?= 9
 OUTPUT ?= outputs/results_$(START)_$(END).json
 
+
+
+ifeq ($(USER),root)
+    USER_HOME := /root
+else
+    USER_HOME := /home/$(USER)
+endif
+
+LMS_BIN_DIR := $(USER_HOME)/.lmstudio/bin
+
+export PATH := $(LMS_BIN_DIR):$(PATH)
+
 .PHONY: help setup install-lms install-model run test list clean
 
 help:
@@ -30,9 +42,12 @@ install-lms:
 	curl -fsSL https://lmstudio.ai/install.sh | bash
 
 install-model:
-	lms get Qwen2-VL-7B-Instruct-GGUF@Q4_K_M --gguf -y
+	$(LMS_BIN_DIR)/lms get Qwen2-VL-7B-Instruct-GGUF@Q4_K_M --gguf -y
 
-setup: install-lms install-model
+install-library:
+	pip install lmstudio --break-system-packages
+
+setup: install-lms install-model install-library
 	@echo "✓ Listo. Añade imágenes a inputs/images/ y ejecuta: make list"
 
 list:
@@ -44,7 +59,7 @@ list:
 	echo ""
 
 run:
-	$(PYTHON) run_vision.py \
+	PATH=$(LMS_BIN_PATH):$$PATH $(PYTHON) run_vision.py \
 		--start     $(START) \
 		--end       $(END) \
 		--pack      $(PACK) \

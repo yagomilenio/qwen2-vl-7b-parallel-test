@@ -1,0 +1,29 @@
+{
+  "prompts": [
+    {
+      "id": "Q01",
+      "label": "Calidad de la imagen",
+      "prompt": "Evalúa la calidad técnica de esta imagen: resolución aparente, nitidez, exposición (sobre/subexpuesta), ruido digital, compresión visible (artefactos JPEG) y encuadre. Puntúa del 1 al 10 y justifica."
+    },
+    {
+      "id": "Q02",
+      "label": "Detección de anomalías",
+      "prompt": "Examina esta imagen en busca de anomalías, defectos, elementos fuera de lugar, daños o irregularidades. Describe cualquier cosa que parezca inusual o que no debería estar presente."
+    },
+    {
+      "id": "Q03",
+      "label": "Comparación con estándar",
+      "prompt": "¿El objeto o escena de esta imagen parece estar en condiciones normales/estándar o hay signos de deterioro, mal uso, instalación incorrecta o incumplimiento? Describe tu evaluación."
+    },
+    {
+      "id": "Q04",
+      "label": "Medidas y proporciones",
+      "prompt": "¿Puedes estimar dimensiones, proporciones o escala de los elementos en la imagen? ¿Hay algún objeto de referencia que permita calcular tamaños relativos? Describe las proporciones que observas."
+    },
+    {
+      "id": "Q05",
+      "label": "Informe de inspección",
+      "prompt": "Genera un breve informe de inspección visual de esta imagen. Estructura tu respuesta con: OBJETO INSPECCIONADO, ESTADO GENERAL (Óptimo/Aceptable/Deficiente), OBSERVACIONES y RECOMENDACIONES."
+    }
+  ]
+}

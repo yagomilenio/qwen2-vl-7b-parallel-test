@@ -1,0 +1,29 @@
+{
+  "prompts": [
+    {
+      "id": "A01",
+      "label": "Alt text accesible",
+      "prompt": "Genera un texto alternativo (alt text) accesible para esta imagen, siguiendo las pautas WCAG. Debe ser conciso (máximo 125 caracteres), descriptivo y útil para usuarios con lectores de pantalla."
+    },
+    {
+      "id": "A02",
+      "label": "Descripción larga accesible",
+      "prompt": "Escribe una descripción larga y detallada de esta imagen para personas con discapacidad visual. Incluye todos los elementos relevantes, colores, posiciones y contexto. Sé objetivo y no hagas interpretaciones subjetivas."
+    },
+    {
+      "id": "A03",
+      "label": "Contenido sensible",
+      "prompt": "Analiza si esta imagen contiene contenido potencialmente sensible: violencia, sangre, contenido para adultos, imágenes perturbadoras o contenido inapropiado para menores. Responde con: SEGURO, ADVERTENCIA o RESTRINGIDO, seguido de una breve justificación."
+    },
+    {
+      "id": "A04",
+      "label": "Categoría de contenido",
+      "prompt": "Clasifica esta imagen en una de estas categorías principales: Naturaleza, Personas, Arquitectura, Producto, Documento, Arte, Tecnología, Comida, Transporte, Deporte, Otro. Indica también una subcategoría más específica."
+    },
+    {
+      "id": "A05",
+      "label": "Palabras clave para búsqueda",
+      "prompt": "Genera 15 palabras clave en español para indexar y buscar esta imagen en una base de datos. Ordénalas de mayor a menor relevancia. Responde con una lista separada por comas."
+    }
+  ]
+}

@@ -1,0 +1,153 @@
+2026-03-03 09:56:47,979 [INFO] ============================================================
+2026-03-03 09:56:47,979 [INFO]   Modelo   : qwen2-vl-7b-instruct@Q4_K_M
+2026-03-03 09:56:47,980 [INFO]   Pack     : general  (5 prompts)
+2026-03-03 09:56:47,980 [INFO]   Rango    : [0..1]  →  2 imágenes
+2026-03-03 09:56:47,981 [INFO]   Output   : outputs/results_0_1.json
+2026-03-03 09:56:47,982 [INFO]   Ops total: 10
+2026-03-03 09:56:47,982 [INFO] ============================================================
+2026-03-03 09:56:47,986 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x76b3fde5ecf0>", "event": "Websocket handling thread started", "thread_id": "Thread-1"}
+2026-03-03 09:56:47,998 [INFO] HTTP Request: GET http://127.0.0.1:41343/lmstudio-greeting "HTTP/1.1 200 OK"
+2026-03-03 09:56:48,015 [INFO] HTTP Request: GET ws://127.0.0.1:41343/llm "HTTP/1.1 101 Switching Protocols"
+2026-03-03 09:56:48,017 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 09:56:48,021 [INFO] 
+[1/2] img_001.jpg
+2026-03-03 09:56:48,022 [INFO]   → [G01] Descripción general
+2026-03-03 09:56:48,034 [INFO] HTTP Request: GET ws://127.0.0.1:41343/files "HTTP/1.1 101 Switching Protocols"
+2026-03-03 09:56:48,035 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 09:56:48,039 [WARNING]     Error en intento 1: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:56:53,069 [WARNING]     Error en intento 2: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:56:58,105 [WARNING]     Error en intento 3: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:56:58,106 [INFO]     ✗ 0s
+2026-03-03 09:56:58,107 [INFO]   → [G02] Objetos presentes
+2026-03-03 09:56:58,116 [WARNING]     Error en intento 1: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:03,148 [WARNING]     Error en intento 2: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:08,185 [WARNING]     Error en intento 3: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:08,188 [INFO]     ✗ 0s
+2026-03-03 09:57:08,188 [INFO]   → [G03] Colores dominantes
+2026-03-03 09:57:08,203 [WARNING]     Error en intento 1: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:13,222 [WARNING]     Error en intento 2: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:18,261 [WARNING]     Error en intento 3: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:18,262 [INFO]     ✗ 0s
+2026-03-03 09:57:18,263 [INFO]   → [G04] Texto visible
+2026-03-03 09:57:18,278 [WARNING]     Error en intento 1: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:23,310 [WARNING]     Error en intento 2: Expected type, ChatHistoryData, or a dict with a 'messages' key
+2026-03-03 09:57:27,535 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 09:57:27,536 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/files)", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 09:57:27,542 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 09:57:27,542 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/llm)", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 09:57:27,548 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x76b3fde5ecf0>", "event": "Websocket thread terminated", "thread_id": "Thread-1"}
+2026-03-03 10:04:13,318 [INFO] ============================================================
+2026-03-03 10:04:13,318 [INFO]   Modelo   : qwen2-vl-7b-instruct@Q4_K_M
+2026-03-03 10:04:13,318 [INFO]   Pack     : general  (5 prompts)
+2026-03-03 10:04:13,319 [INFO]   Rango    : [0..1]  →  2 imágenes
+2026-03-03 10:04:13,319 [INFO]   Output   : outputs/results_0_1.json
+2026-03-03 10:04:13,319 [INFO]   Ops total: 10
+2026-03-03 10:04:13,320 [INFO] ============================================================
+2026-03-03 10:04:13,326 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x74c261a0ecf0>", "event": "Websocket handling thread started", "thread_id": "Thread-1"}
+2026-03-03 10:04:13,341 [INFO] HTTP Request: GET http://127.0.0.1:41343/lmstudio-greeting "HTTP/1.1 200 OK"
+2026-03-03 10:04:13,352 [INFO] HTTP Request: GET ws://127.0.0.1:41343/llm "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:04:13,355 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:04:13,358 [INFO] 
+[1/2] img_001.jpg
+2026-03-03 10:04:13,359 [INFO]   → [G01] Descripción general
+2026-03-03 10:04:13,374 [INFO] HTTP Request: GET ws://127.0.0.1:41343/files "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:04:13,375 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:04:13,379 [WARNING]     Error en intento 1: LLM.respond() missing 1 required positional argument: 'history'
+2026-03-03 10:04:18,393 [WARNING]     Error en intento 2: LLM.respond() missing 1 required positional argument: 'history'
+2026-03-03 10:04:20,237 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:04:20,237 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/files)", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:04:20,244 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/llm)", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:04:20,244 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:04:20,249 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x74c261a0ecf0>", "event": "Websocket thread terminated", "thread_id": "Thread-1"}
+2026-03-03 10:05:06,124 [INFO] ============================================================
+2026-03-03 10:05:06,124 [INFO]   Modelo   : qwen2-vl-7b-instruct@Q4_K_M
+2026-03-03 10:05:06,125 [INFO]   Pack     : general  (5 prompts)
+2026-03-03 10:05:06,126 [INFO]   Rango    : [0..1]  →  2 imágenes
+2026-03-03 10:05:06,126 [INFO]   Output   : outputs/results_0_1.json
+2026-03-03 10:05:06,127 [INFO]   Ops total: 10
+2026-03-03 10:05:06,127 [INFO] ============================================================
+2026-03-03 10:05:06,132 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x76d276bd6cf0>", "event": "Websocket handling thread started", "thread_id": "Thread-1"}
+2026-03-03 10:05:06,145 [INFO] HTTP Request: GET http://127.0.0.1:41343/lmstudio-greeting "HTTP/1.1 200 OK"
+2026-03-03 10:05:06,156 [INFO] HTTP Request: GET ws://127.0.0.1:41343/llm "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:05:06,158 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:05:06,164 [INFO] 
+[1/2] img_001.jpg
+2026-03-03 10:05:06,165 [INFO]   → [G01] Descripción general
+2026-03-03 10:05:06,178 [INFO] HTTP Request: GET ws://127.0.0.1:41343/files "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:05:06,180 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:05:20,646 [INFO]     ✓ 14.48s
+2026-03-03 10:05:20,647 [INFO]   → [G02] Objetos presentes
+2026-03-03 10:05:33,429 [INFO]     ✓ 12.78s
+2026-03-03 10:05:33,429 [INFO]   → [G03] Colores dominantes
+2026-03-03 10:05:59,870 [INFO]     ✓ 26.44s
+2026-03-03 10:05:59,871 [INFO]   → [G04] Texto visible
+2026-03-03 10:06:09,839 [INFO]     ✓ 9.97s
+2026-03-03 10:06:09,840 [INFO]   → [G05] Resumen en una frase
+2026-03-03 10:06:21,510 [INFO]     ✓ 11.67s
+2026-03-03 10:06:21,516 [INFO] 
+[2/2] img_002.jpg
+2026-03-03 10:06:21,517 [INFO]   → [G01] Descripción general
+2026-03-03 10:06:38,861 [INFO]     ✓ 17.34s
+2026-03-03 10:06:38,862 [INFO]   → [G02] Objetos presentes
+2026-03-03 10:06:54,891 [INFO]     ✓ 16.03s
+2026-03-03 10:06:54,892 [INFO]   → [G03] Colores dominantes
+2026-03-03 10:07:56,646 [INFO]     ✓ 61.75s
+2026-03-03 10:07:56,646 [INFO]   → [G04] Texto visible
+2026-03-03 10:08:04,017 [INFO]     ✓ 7.37s
+2026-03-03 10:08:04,017 [INFO]   → [G05] Resumen en una frase
+2026-03-03 10:08:14,246 [INFO]     ✓ 10.23s
+2026-03-03 10:08:14,252 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:08:14,252 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/files)", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:08:14,256 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:08:14,256 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/llm)", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:08:14,261 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x76d276bd6cf0>", "event": "Websocket thread terminated", "thread_id": "Thread-1"}
+2026-03-03 10:08:14,267 [INFO] 
+✅ outputs/results_0_1.json  (10/10 ok)
+2026-03-03 10:14:27,411 [INFO] ============================================================
+2026-03-03 10:14:27,411 [INFO]   Modelo   : qwen2-vl-7b-instruct@Q4_K_M
+2026-03-03 10:14:27,412 [INFO]   Pack     : general  (5 prompts)
+2026-03-03 10:14:27,413 [INFO]   Rango    : [0..1]  →  2 imágenes
+2026-03-03 10:14:27,413 [INFO]   Output   : outputs/results_0_1.json
+2026-03-03 10:14:27,414 [INFO]   Ops total: 10
+2026-03-03 10:14:27,414 [INFO] ============================================================
+2026-03-03 10:14:27,419 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x78266a566cf0>", "event": "Websocket handling thread started", "thread_id": "Thread-1"}
+2026-03-03 10:14:27,434 [INFO] HTTP Request: GET http://127.0.0.1:41343/lmstudio-greeting "HTTP/1.1 200 OK"
+2026-03-03 10:14:27,447 [INFO] HTTP Request: GET ws://127.0.0.1:41343/llm "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:14:27,450 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:14:27,455 [INFO] 
+[1/2] img_001.jpg
+2026-03-03 10:14:27,456 [INFO]   → [G01] Descripción general
+2026-03-03 10:14:27,479 [INFO] HTTP Request: GET ws://127.0.0.1:41343/files "HTTP/1.1 101 Switching Protocols"
+2026-03-03 10:14:27,480 [INFO] {"event": "Websocket session established", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:15:25,191 [INFO]     ✓ 57.73s
+2026-03-03 10:15:25,195 [INFO]   → [G02] Objetos presentes
+2026-03-03 10:16:39,667 [INFO]     ✓ 74.47s
+2026-03-03 10:16:39,668 [INFO]   → [G03] Colores dominantes
+2026-03-03 10:17:43,432 [WARNING]     Error en intento 1: 
+2026-03-03 10:17:43,484 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'promptProcessingProgress', 'progress': 1, 'details': {'cachedTokenCount': 0, 'totalPromptTokenCount': 462, 'processedPromptTokenCount': 462, 'unprocessedPromptTokenCount': 0}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:44,680 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': 'La', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': 'La', 'id': 8747}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,064 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' imagen', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' imagen', 'id': 40569}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,472 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' es', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' es', 'id': 1531}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,670 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' bl', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' bl', 'id': 1501}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,858 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': 'anca', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': 'anca', 'id': 63245}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,860 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' y', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' y', 'id': 379}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,861 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' neg', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' neg', 'id': 4184}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:45,862 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': 'ra', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': 'ra', 'id': 956}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:46,065 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ',', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ',', 'id': 11}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:46,067 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' lo', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' lo', 'id': 775}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:46,273 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' que', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' que', 'id': 1709}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:46,848 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' significa', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' significa', 'id': 67732}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:46,849 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' que', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' que', 'id': 1709}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:47,035 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' los', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' los', 'id': 2478}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:47,243 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' col', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' col', 'id': 1375}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:47,440 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': 'ores', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': 'ores', 'id': 4589}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:47,639 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' domin', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' domin', 'id': 11111}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:48,024 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': 'antes', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': 'antes', 'id': 15477}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:48,233 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' son', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' son', 'id': 4438}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:48,235 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' el', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' el', 'id': 655}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:17:51,353 [WARNING] {"channel_id": 4, "event": "Received unhandled message {'type': 'channelSend', 'channelId': 4, 'message': {'type': 'fragment', 'fragment': {'content': ' blanco', 'tokensCount': 1, 'containsDrafted': False, 'reasoningType': 'none', 'isStructural': False, 'tokens': [{'text': ' blanco', 'id': 89547}]}}} for already closed channel", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:18:25,018 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:18:25,018 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/files)", "ws_url": "ws://127.0.0.1:41343/files"}
+2026-03-03 10:18:25,024 [INFO] {"event": "Websocket closed.", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:18:25,025 [INFO] {"event": "Websocket session disconnected (ws://127.0.0.1:41343/llm)", "ws_url": "ws://127.0.0.1:41343/llm"}
+2026-03-03 10:18:25,031 [INFO] {"client": "<lmstudio.sync_api.Client object at 0x78266a566cf0>", "event": "Websocket thread terminated", "thread_id": "Thread-1"}

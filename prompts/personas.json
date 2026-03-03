@@ -1,0 +1,29 @@
+{
+  "prompts": [
+    {
+      "id": "H01",
+      "label": "Número de personas",
+      "prompt": "¿Cuántas personas aparecen en la imagen? Si no hay ninguna, responde 'Sin personas'. Si hay personas, indica si están en primer plano, fondo o distribuidas por la escena."
+    },
+    {
+      "id": "H02",
+      "label": "Actividad y postura",
+      "prompt": "Describe qué están haciendo las personas que aparecen en la imagen. ¿Cuál es su postura (de pie, sentado, en movimiento)? ¿Están interactuando entre sí?"
+    },
+    {
+      "id": "H03",
+      "label": "Vestimenta y apariencia",
+      "prompt": "Describe la vestimenta y apariencia general de las personas en la imagen. Incluye colores de ropa, tipo de indumentaria y cualquier accesorio visible. No hagas suposiciones sobre identidades."
+    },
+    {
+      "id": "H04",
+      "label": "Emociones y expresiones",
+      "prompt": "Describe las expresiones faciales y el estado emocional aparente de las personas en la imagen. ¿Parecen alegres, serias, concentradas, sorprendidas? Justifica tu interpretación."
+    },
+    {
+      "id": "H05",
+      "label": "Contexto social",
+      "prompt": "¿En qué contexto social o situación parecen encontrarse las personas? (reunión de trabajo, evento social, actividad deportiva, contexto familiar, etc.). ¿Qué elementos visuales te llevan a esa conclusión?"
+    }
+  ]
+}
