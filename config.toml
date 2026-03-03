@@ -1,7 +1,3 @@
-# ─────────────────────────────────────────────────────────────────
-#  config.toml — Leído ÚNICAMENTE por el servidor de paralelización
-#  El script run_vision.py NO lee este fichero en absoluto.
-# ─────────────────────────────────────────────────────────────────
 [requirements]
 packages = ["make", "curl", "python3-pip"]
 

@@ -1,8 +1,3 @@
-# ─────────────────────────────────────────────────────────────────
-#  Makefile — uso manual y desarrollo
-#  El servidor de paralelización llama a run_vision.py directamente.
-# ─────────────────────────────────────────────────────────────────
-
 PYTHON := python3
 PACK   ?= general
 START  ?= 0
@@ -10,12 +5,7 @@ END    ?= 9
 OUTPUT ?= outputs/results_$(START)_$(END).json
 
 
-
-ifeq ($(USER),root)
-    USER_HOME := /root
-else
-    USER_HOME := /home/$(USER)
-endif
+USER_HOME := $(shell getent passwd $$(id -u) | cut -d: -f6)
 
 LMS_BIN_DIR := $(USER_HOME)/.lmstudio/bin
 

@@ -56,9 +56,9 @@ make test         # prueba rápida: imagen 0
 
 | Argumento | Requerido | Descripción |
 |---|---|---|
-| `--start` | ✅ | Índice inicial (inclusivo) |
-| `--end` | ✅ | Índice final (inclusivo) |
-| `--output` | ✅ | Ruta del JSON de salida |
+| `--start` | Índice inicial (inclusivo) |
+| `--end` | Índice final (inclusivo) |
+| `--output` | Ruta del JSON de salida |
 | `--pack` | — | Pack de prompts (defecto: `general`) |
 | `--input-dir` | — | Directorio de imágenes (defecto: `inputs/images`) |
 | `--model-config` | — | Config del modelo (defecto: `model_config.toml`) |

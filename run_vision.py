@@ -1,12 +1,4 @@
 #!/usr/bin/env python3
-"""
-run_vision.py — Procesa un rango de imágenes con Qwen2-VL via lmstudio Python SDK.
-
-El servidor de paralelización llama a este script así:
-    python run_vision.py --start 0 --end 9 --pack general --output outputs/results_0_9.json
-
-El script NO lee config.toml. Recibe todo lo que necesita por argumentos.
-"""
 
 import argparse
 import json
@@ -80,6 +72,16 @@ def load_prompt_pack(pack_name: str) -> list[dict]:
 #  LLAMADA AL MODELO
 # ══════════════════════════════════════════════════════════════════
 
+
+def get_model(client, model_cfg):
+    for attempt in range(1, model_cfg.max_retries + 1):
+        try:
+            return client.llm.model(model_cfg.id)
+        except Exception as e:
+            logging.warning(f"Error cargando modelo {model_cfg.id} (intento {attempt}): {e}")
+            time.sleep(model_cfg.retry_delay)
+    raise RuntimeError(f"No se pudo inicializar el modelo {model_cfg.id} tras {model_cfg.max_retries} intentos")
+
 def run_prompt(
     client: lms.Client,
     model: object,
@@ -99,6 +101,26 @@ def run_prompt(
             # Preparar la imagen (el SDK la sube al servidor y devuelve un handle)
             image = client.files.prepare_image(str(image_path))
 
+            image = None
+            for attempt_img in range(3):
+                try:
+                    image = client.files.prepare_image(str(image_path))
+                    if image is not None:
+                        break
+                except Exception as e:
+                    logging.warning(f"Intento {attempt_img+1} para subir {image_path} falló: {e}")
+                    time.sleep(1)
+
+            if image is None:
+                # Si no conseguimos subir la imagen, retornamos fallo inmediato
+                elapsed = 0
+                return {
+                    "success": False,
+                    "response": None,
+                    "elapsed_sec": elapsed,
+                    "attempt": 0,
+                    "error": f"No se pudo preparar la imagen {image_path}"
+                }
             chat = lms.Chat()
 
 
@@ -176,7 +198,7 @@ def process(
 
     # Una sola conexión y un solo handle de modelo para todo el proceso
     with lms.Client() as client:
-        model = client.llm.model(model_cfg.id)
+        model = get_model(client, model_cfg)
 
         for offset, image_path in enumerate(images):
             global_idx = start + offset
