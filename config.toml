@@ -1,7 +1,7 @@
 [requirements]
 packages = ["make", "curl", "python3-pip"]
 
-[inputs]
+[inputs]]
 type = "directory"
 
 [inputs.directory]
@@ -10,7 +10,7 @@ recursive  = false
 extensions = [".jpg", ".jpeg", ".png", ".webp", ".bmp"]
 sort_order = "filename"
 
-[runner]
+[runnder]
 command   = "python run_vision.py"
 arg_start = "--start"
 arg_end   = "--end"
