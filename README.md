@@ -1,5 +1,4 @@
 # qwen2-vl-7b-parallel-test
-[![Ask DeepWiki](https://devin.ai/assets/askdeepwiki.png)](https://deepwiki.com/yagomilenio/qwen2-vl-7b-parallel-test)
 
 Procesamiento paralelo de imágenes con **Qwen2-VL-7B** via LM Studio. Cada worker recibe un rango de imágenes y un pack de prompts, ejecuta el modelo visión sobre cada imagen y escribe los resultados en un fichero JSON.
 
