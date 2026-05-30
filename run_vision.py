@@ -13,13 +13,13 @@ from pathlib import Path
 import lmstudio as lms
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  CONFIG INTERNA DEL MODELO
-# ══════════════════════════════════════════════════════════════════
+
 
 @dataclass
 class ModelConfig:
-    id:             str   = "qwen2-vl-7b-instruct@Q4_K_M"
+    id:             str   = "qwen2.5-vl-7b"
     temperature:    float = 0.7
     max_tokens:     int   = 1024
     context_length: int   = 4096
@@ -37,9 +37,9 @@ def load_model_config(path: str = "model_config.toml") -> ModelConfig:
     return ModelConfig(**raw.get("model", {}))
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  LOGGING
-# ══════════════════════════════════════════════════════════════════
+
 
 def setup_logging(output_path: Path) -> None:
     log_path = output_path.with_suffix(".log")
@@ -54,9 +54,9 @@ def setup_logging(output_path: Path) -> None:
     )
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  PROMPT PACK
-# ══════════════════════════════════════════════════════════════════
+
 
 def load_prompt_pack(pack_name: str) -> list[dict]:
     pack_file = Path("prompts") / f"{pack_name}.json"
@@ -68,9 +68,9 @@ def load_prompt_pack(pack_name: str) -> list[dict]:
         return json.load(f)["prompts"]
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  LLAMADA AL MODELO
-# ══════════════════════════════════════════════════════════════════
+
 
 
 def get_model(client, model_cfg):
@@ -89,11 +89,7 @@ def run_prompt(
     prompt_text: str,
     model_cfg: ModelConfig,
 ) -> dict:
-    """
-    Envía una imagen + prompt al modelo usando el SDK oficial de LM Studio.
-    El cliente y el modelo se reciben ya inicializados para reutilizarlos
-    entre llamadas y evitar reconexiones innecesarias.
-    """
+
     for attempt in range(1, model_cfg.max_retries + 1):
         try:
             t0 = time.time()
@@ -154,9 +150,9 @@ def run_prompt(
     }
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  PROCESAMIENTO
-# ══════════════════════════════════════════════════════════════════
+
 
 def process(
     start: int,
@@ -253,9 +249,9 @@ def process(
     logging.info(f"\n {output_path}  ({n_ok}/{len(images) * len(prompts)} ok)")
 
 
-# ══════════════════════════════════════════════════════════════════
+
 #  CLI
-# ══════════════════════════════════════════════════════════════════
+
 
 def main() -> None:
     parser = argparse.ArgumentParser(
