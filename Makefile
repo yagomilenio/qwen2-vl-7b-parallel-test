@@ -32,7 +32,7 @@ install-lms:
 	bash install.sh
 
 install-model:
-	$(LMS_BIN_DIR)/lms get Qwen2-VL-7B-Instruct-GGUF@Q4_K_M --gguf -y
+	$(LMS_BIN_DIR)/lms get qwen/qwen2.5-vl-7b -y
 
 install-library:
 	pip install lmstudio --break-system-packages
