@@ -1,7 +1,7 @@
-# ─────────────────────────────────────────────────────────────────
+
 #  model_config.toml — Config interna de run_vision.py
 #  El servidor de paralelización NO lee este fichero.
-# ─────────────────────────────────────────────────────────────────
+
 
 [model]
 id             = "qwen2.5-vl-7b"
