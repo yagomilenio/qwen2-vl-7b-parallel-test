@@ -49,7 +49,7 @@ list:
 	echo ""
 
 run:
-	PATH=$(LMS_BIN_PATH):$$PATH $(PYTHON) run_vision.py \
+	bash start-server.sh && PATH=$(LMS_BIN_PATH):$$PATH $(PYTHON) run_vision.py \
 		--start     $(START) \
 		--end       $(END) \
 		--pack      $(PACK) \
