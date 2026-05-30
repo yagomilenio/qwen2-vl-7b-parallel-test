@@ -29,7 +29,7 @@ help:
 	@echo ""
 
 install-lms:
-	curl -fsSL https://lmstudio.ai/install.sh -o install.sh && bash install.sh && rm install.sh 
+	curl -fsSL https://lmstudio.ai/install.sh | bash
 
 install-model:
 	$(LMS_BIN_DIR)/lms get Qwen2-VL-7B-Instruct-GGUF@Q4_K_M --gguf -y
